@@ -4,14 +4,29 @@
 
 [Páginas web](https://greenpeace.github.io/gpes-test-convert-com/)
 
-## Obervaciones
+## Observaciones de pruebas realizadas
 
-- Solo el código de seguimiento no pone cookies ⬆︎
+### Cookies
+
+- Solo con el código de seguimiento y sin experimento pone cookies ⬇︎
 - Pone cookies si hay un experimento A/A antes que la persona decida ⬇︎
-- El tamaño del script es grande
-  - En página en blanco, pero con el tracking de convert.com: 663Kb transferred, 1.3MB resources, 530ms (es bastante) ⬇︎
-  - El script que tenemos ahora para AB: 3.4Kb, carga en 110ms ⬆︎
-  - Sin tracking convert.com: 1.4MB transferred, 2,7MB resources, 764ms/1.44s
-  - Con tracking convert.com: 2.1MB transferred, 4.1MB resources, 930ms/1.85s ⬇︎
 
-Falta conducir más test para ver cuanto afecta al final las páginas de Greenpeace
+### Tamaño del script
+
+- El tamaño del script es grande
+  - En página en blanco, pero con el tracking de convert.com: 663Kb transferred, 1.3MB resources⬇︎
+  - Como referencia de comparación el script de ahora para AB: 3.4Kb ⬆︎
+- Comparación de la home aislada:
+  - Sin tracking convert.com: 1.4MB transferred, 2,7MB resources (referencia)
+  - Misma página con tracking convert.com: 2.1MB transferred, 4.1MB resources ⬇︎
+
+## Por hacer
+
+### Cookies
+
+- Falta ver si se puede controlar el uso de cookies, para que se pongan solo después de la aceptación.
+
+### Velocidad
+
+- Falta conducir más test para ver cuanto afecta al final las páginas de Greenpeace. Con conexiones rápidas y ordenador potente el efecto no es demasiado grave (aunque afecta a todas las páginas sin experimento)
+
