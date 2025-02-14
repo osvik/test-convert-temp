@@ -29,4 +29,7 @@
 ### Velocidad
 
 - Falta conducir más test para ver cuanto afecta al final las páginas de Greenpeace. Con conexiones rápidas y ordenador potente el efecto no es demasiado grave (aunque afecta a todas las páginas sin experimento)
+- Puede afectar mucho al SEO, sobretodo si pasa las paginas a rojo.
+- Falta simular el uso de la pagina con conexiones menos buenas.
+
 
