@@ -1,5 +1,10 @@
-# Testing convert.com for Spain
+# Testando convert.com para España
 
-[Task in Asana](https://app.asana.com/0/1201820848298280/1208604989923128)
+[Tarea en Asana](https://app.asana.com/0/1201820848298280/1208604989923128)
 
-[Web pages](https://greenpeace.github.io/gpes-test-convert-com/)
+[Páginas web](https://greenpeace.github.io/gpes-test-convert-com/)
+
+## Obervaciones
+
+- Solo el código de seguimiento no pone cookies ⬆︎
+- Pone cookies si hay un experimento A/A antes que la persona decida ⬇︎
