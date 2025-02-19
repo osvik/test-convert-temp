@@ -95,6 +95,7 @@ const trackingScripts = {
             this.googleTagManager();
             this.hotjar();
             storeUTMParameters();
+            window._conv_q.push(['consentGiven']); // Convert.com consent
         } else {
             this.googleAnalyticsFooter();
         }
