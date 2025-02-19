@@ -8,8 +8,14 @@
 
 ### Cookies
 
-- Solo con el código de seguimiento y sin experimento pone cookies ⬇︎
-- Pone cookies si hay un experimento A/A antes que la persona decida ⬇︎
+- Para no poner cookies hay que primero añadir el en global javascript:
+
+```javascript
+_conv_q.push(["consentRequired"]);
+```
+
+Y después gestionar los permisos de cookies con la interfaz de tracking y el GUI.
+
 
 ### Tamaño del script
 
@@ -24,7 +30,8 @@
 
 ### Cookies
 
-- Falta ver si se puede controlar el uso de cookies, para que se pongan solo después de la aceptación.
+- Integrar la autorización de cookies con el GUI y sistema de gestión de cookies de Greenpeace.
+
 
 ### Velocidad
 
