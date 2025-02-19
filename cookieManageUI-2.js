@@ -31,7 +31,11 @@ const cookieManageUI = {
                 'cookie_consent' : getConsentString(),
                 'non_interaction': true
             });
-            window._conv_q.push(['consentGiven']); // Convert.com consent
+            if (typeof (window._conv_q) === "object") {
+                window._conv_q.push(['consentGiven']); // Convert.com consent
+            } else {
+                console.log("Convert.com not loaded");
+            }
         });
 
         jQuery("#cookiePromptCenter [data-cookieResponse=deny_all]").on("click", function () {
@@ -105,7 +109,11 @@ const cookieManageUI = {
                 'cookie_consent' : getConsentString(),
                 'non_interaction': true
             });
-            window._conv_q.push(['consentGiven']); // Convert.com consent
+            if (typeof (window._conv_q) === "object") {
+                window._conv_q.push(['consentGiven']); // Convert.com consent
+            } else {
+                console.log("Convert.com not loaded");
+            }
         });
 
         jQuery("#cookiePrivacySettings [data-cookieResponse=deny_all]").on("click", function () {
@@ -134,7 +142,12 @@ const cookieManageUI = {
             cookieTrackingManager.writeEvent();
             if ( cookieTrackingManager.canItrack("analytics") ) {
                 setCookie("gp_anonymous_id", window.uuid, 365 * 2); // Mixpanel
-                window._conv_q.push(['consentGiven']); // Convert.com consent
+                if (typeof (window._conv_q) === "object") {
+                    window._conv_q.push(['consentGiven']); // Convert.com consent
+                } else {
+                    console.log("Convert.com not loaded");
+                }
+
             }
             trackingScripts.initAll();
 

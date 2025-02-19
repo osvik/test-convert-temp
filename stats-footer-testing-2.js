@@ -95,7 +95,11 @@ const trackingScripts = {
             this.googleTagManager();
             this.hotjar();
             storeUTMParameters();
-            window._conv_q.push(['consentGiven']); // Convert.com consent
+            if (typeof (window._conv_q) === "object") {
+                window._conv_q.push(['consentGiven']); // Convert.com consent
+            } else {
+                console.log("Convert.com not loaded");
+            }
         } else {
             this.googleAnalyticsFooter();
         }
