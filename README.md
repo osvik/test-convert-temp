@@ -4,17 +4,27 @@
 
 [Páginas web](https://greenpeace.github.io/gpes-test-convert-com/)
 
+
+- [Testando convert.com para España](#testando-convertcom-para-españa)
+  - [Observaciones de pruebas realizadas](#observaciones-de-pruebas-realizadas)
+    - [Cookies](#cookies)
+    - [Tamaño del script](#tamaño-del-script)
+    - [Velocidad](#velocidad)
+
+
 ## Observaciones de pruebas realizadas
 
 ### Cookies
 
-- Para no poner cookies hay que primero añadir el en global javascript:
+Para no poner cookies hay que primero añadir el en global javascript:
 
 ```javascript
 _conv_q.push(["consentRequired"]);
 ```
 
-Y después gestionar los permisos de cookies con la interfaz de tracking y el GUI.
+Y después se gestionan los permisos de cookies con la interfaz de tracking y el GUI.
+
+La implementación tiene algún tipo de bug porque el código arriba no aparece de inmediato. Se desconoce aún si la solución es borrar todos los experimentos o si con el pasar del tiempo de actualiza.
 
 
 ### Tamaño del script
@@ -26,17 +36,24 @@ Y después gestionar los permisos de cookies con la interfaz de tracking y el GU
   - Sin tracking convert.com: 1.4MB transferred, 2,7MB resources (referencia)
   - Misma página con tracking convert.com: 2.1MB transferred, 4.1MB resources ⬇︎
 
-## Por hacer
-
-### Cookies
-
-- Integrar la autorización de cookies con el GUI y sistema de gestión de cookies de Greenpeace.
-
-
 ### Velocidad
 
-- Falta conducir más test para ver cuanto afecta al final las páginas de Greenpeace. Con conexiones rápidas y ordenador potente el efecto no es demasiado grave (aunque afecta a todas las páginas sin experimento)
-- Puede afectar mucho al SEO, sobretodo si pasa las paginas a rojo.
-- Falta simular el uso de la pagina con conexiones menos buenas.
+Comparando la página con script versus sin script convert:
+
+- [Sin script](https://greenpeace.github.io/gpes-test-convert-com/off.html)
+- [Con script y un experimento muy simple](https://greenpeace.github.io/gpes-test-convert-com/convert-2.html)
+
+Pagespeed:
+
+- [Pagespped sin convet](https://pagespeed.web.dev/analysis/https-greenpeace-github-io-gpes-test-convert-com-off-html/nbspszzj83?form_factor=mobile)
+- [Pagespeed con convert](https://pagespeed.web.dev/analysis/https-greenpeace-github-io-gpes-test-convert-com-convert-2-html/blhiugl2n6?form_factor=mobile)
+
+WebPageTest:
+
+- [WebPageTest sin convert](https://www.webpagetest.org/result/250219_BiDc20_6XA/)
+- [WebPageTest con convert](https://www.webpagetest.org/result/250219_AiDcRJ_6VB/)
+
+- [Tiempos sin convert](tests/webpagetest-sin-convert.png)
+- [Tiempos con convert](tests/webpagetest-con-convert.png)
 
 
